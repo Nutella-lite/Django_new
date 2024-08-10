@@ -1,0 +1,18 @@
+<!-- Навигация -->
+<ul class="nav nav-underline">
+    <li class="nav-item">
+        <a class="nav-link {% if active_page == 'index' %}active{% endif %}" href="/">Главная</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if active_page == 'django_guide' %}active{% endif %}" href="{% url 'guide' %}">Гайд по Django</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if active_page == 'parsing_tools' %}active{% endif %}" href="{% url 'tools' %}">Инструменты парсинга</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if active_page == 'faq' %}active{% endif %}" href="{% url 'faq' %}">FAQ</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if active_page == 'news' %}active{% endif %}" href="{% url 'news' %}">Новости</a>
+    </li>
+</ul>

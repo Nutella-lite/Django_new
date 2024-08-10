@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+    {% block title %}
+        Новости
+    {% endblock %}
+    {% block content %}
+<main class="container mt-4">
+    <h1>Новости</h1>
+    <!-- Аккордеон -->
+<section>
+    <div class="accordion" id="accordionExample">
+        {% for new in news %}
+        <div class="card">
+            <div class="card-header" id="heading{{ forloop.counter }}">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                        {{ new.title }}
+                    </button>
+                </h2>
+                <p> {{ new.preview }}</p>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{ new.text }}
+                    <p> <span> <hr>
+                            {{ new.pub_date }} <br>
+                            <span> Источник: {{ new.source }} </span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+</main>
+    {% endblock %}
